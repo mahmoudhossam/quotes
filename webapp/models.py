@@ -4,5 +4,4 @@ from django.db import models
 
 class Quote(models.Model):
     quote_text = models.TextField()
-    quote_src = models.CharField(max_length=100)
-
+    quote_source = models.CharField(max_length=100)
