@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Quotes</title>
+    </head>
+    <body>
+        {% for i in quotes %}
+            <blockquote>
+            {{i.quote_text}}
+            </blockquote>
+            <pre>
+            -- {{i.quote_source}}
+            </pre>
+        {% empty %}
+            Nothing to see here, move along.
+        {% endfor %}
+    </body>
+</html>
