@@ -4,21 +4,14 @@
     </head>
 
     <body>
-        <h1>New quote</h1>
+        <h1>Add new quote</h1>
 
         <form method="POST">
             {% csrf_token %}
             <table>
-                <tr>
-                    <td><label>Quote<textarea name="quote"></textarea></label></td>
-                </tr>
-                <tr>
-                    <td><label>Source<input type="text" name="source"></label></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="OK"></td>
-                </tr>
+                {{ form.as_table }}
             </table>
+            <input type="submit" value="Submit" />
         </form>
     </body>
 </html>
