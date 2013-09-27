@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'quotes.views.home', name='home'),
     # url(r'^quotes/', include('quotes.foo.urls')),
+    url(r'^quotes/(?P<pk>\d)/$', webapp.views.ViewQuote.as_view()),
     url(r'^quotes/add$', webapp.views.AddQuote.as_view()),
     url(r'^$', webapp.views.QuoteList.as_view()),
     # Uncomment the admin/doc line below to enable admin documentation:

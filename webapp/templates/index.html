@@ -4,6 +4,7 @@
     </head>
     <body>
         {% for i in quotes %}
+            <a href="/quotes/{{i.pk}}" >#{{i.pk}}</a>
             <blockquote>
             {{i.quote_text}}
             </blockquote>
