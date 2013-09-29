@@ -1,9 +1,9 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, include, url
 import webapp.views
+from django.contrib import admin
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -12,9 +12,7 @@ urlpatterns = patterns('',
     url(r'^quotes/(?P<pk>\d)/$', webapp.views.ViewQuote.as_view()),
     url(r'^quotes/add$', webapp.views.AddQuote.as_view()),
     url(r'^$', webapp.views.QuoteList.as_view()),
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
 )
