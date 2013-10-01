@@ -3,3 +3,5 @@ venv/
 *.pyc
 *.pyo
 *.sublime-*
+.project
+.pydevproject
