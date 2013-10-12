@@ -1,9 +1,15 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "js/modal.js" %}"></script>
     {% load bootstrap3 %}
     {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% block extrahead %}
+    {% endblock %}
 </head>
 <body>
 <nav class="navbar navbar-default">

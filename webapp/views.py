@@ -1,5 +1,7 @@
+from django.core.urlresolvers import reverse_lazy
+from django.shortcuts import redirect
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from .forms import AddForm
 from .models import Quote
 
@@ -19,3 +21,9 @@ class QuoteList(ListView):
     model = Quote
     template_name = 'index.html'
     context_object_name = 'quotes'
+
+
+class DeleteQuote(DeleteView):
+    model = Quote
+    template_name = 'delete.html'
+    success_url = '/'

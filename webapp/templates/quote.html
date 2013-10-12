@@ -1,6 +1,15 @@
 {% extends "base.html" %}
-        {% block title %}Quote #{{quote.pk}}{% endblock %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block extrahead %}
+<script type="text/javascript" src="{% static "js/modal.js" %}"></script>
+{% endblock %}
+{% block title %}Quote #{{quote.pk}}{% endblock %}
+{% block nav %}
+<li><a href="{% url "webapp:delete" quote.pk %}" onclick="showModal(); return false;" id="deleteLink">Delete</a></li>
+{% endblock %}
 {% block body %}
+{% include "delete.html" %}
     <h1>Quote #{{quote.pk}}</h1>
         <blockquote>
             <p>{{ quote.quote_text }}</p>
