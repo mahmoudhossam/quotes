@@ -1,7 +1,5 @@
-venv/
 .env
 *.pyc
 *.pyo
 *.sublime-*
-.project
-.pydevproject
+.idea/
