@@ -1,18 +1,16 @@
-<html>
-    <head>
-        <title>Quotes</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+{% block title %}Quotes{% endblock %}
+{% block nav %}
+<li><a href="{% url "webapp:add" %}">Add new</a></li>
+{% endblock %}
+{% block body %}
         {% for i in quotes %}
             <a href="/quotes/{{i.pk}}" >#{{i.pk}}</a>
             <blockquote>
-            {{i.quote_text}}
+                <p>{{i.quote_text}}</p>
+             <small><cite>{{i.quote_source}}</cite></small>
             </blockquote>
-            <pre>
-            -- {{i.quote_source}}
-            </pre>
         {% empty %}
-            Nothing to see here, move along.
+            <p>Nothing to see here, would you like to <a href="{% url 'webapp:add' %}">add one</a>?</p>
         {% endfor %}
-    </body>
-</html>
+{% endblock %}

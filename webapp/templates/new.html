@@ -1,17 +1,11 @@
-<html>
-    <head>
-        <title>Test</title>
-    </head>
-
-    <body>
-        <h1>Add new quote</h1>
-
-        <form method="POST">
-            {% csrf_token %}
-            <table>
-                {{ form.as_table }}
-            </table>
-            <input type="submit" value="Submit" />
-        </form>
-    </body>
-</html>
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block title %}Add new quote{% endblock %}
+{% block body %}
+    <h1 class="page-header">Add new quote</h1>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% bootstrap_button "Submit" "submit" %}
+    </form>
+{% endblock %}

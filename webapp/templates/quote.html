@@ -1,14 +1,9 @@
-<html>
-    <head>
-        <title>Quote #{{quote.pk}}</title>
-    </head>
-
-    <body>
+{% extends "base.html" %}
+        {% block title %}Quote #{{quote.pk}}{% endblock %}
+{% block body %}
+    <h1>Quote #{{quote.pk}}</h1>
         <blockquote>
-            {{ quote.quote_text }}
+            <p>{{ quote.quote_text }}</p>
+        <small><cite>{{ quote.quote_source }}</cite></small>
         </blockquote>
-        <pre>
-        -- {{ quote.quote_source }}
-        <pre>
-    </body>
-</html>
+{% endblock %}
