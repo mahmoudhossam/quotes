@@ -12,8 +12,15 @@
 {% block body %}
 {% include "delete.html" %}
     <h1>Quote #{{quote.pk}}</h1>
-        <blockquote>
-            <p>{{ quote.quote_text }}</p>
+        <blockquote class="jumbotron">
+            <div class="quote">
+                <div class="quote-mark">&#8220;</div>
+                <p>{{ quote.quote_text }}</p>
+                <div class="quote-mark">&#8221;</div>
+            </div>
         <small><cite>{{ quote.quote_source }}</cite></small>
+        <div class="quote-date">
+                Added on: {{quote.added_on}}
+        </div>
         </blockquote>
 {% endblock %}

@@ -1,0 +1,31 @@
+blockquote small {
+    float: right;
+}
+
+.quote-mark {
+    font-size: 200%;
+    vertical-align: top;
+    display: inline-block;
+    line-height: 1;
+}
+
+.quote {
+    vertical-align: top;
+}
+
+.quote p {
+    display: inline-block;
+    font-family: Forum;
+    font-size: 120%;
+    margin: 0;
+    padding: 0;
+}
+
+.quote-date {
+    font-size: 50%;
+    clear: both;
+}
+
+blockquote.jumbotron {
+    padding-bottom: 1%;
+}
