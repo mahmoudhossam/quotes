@@ -3,3 +3,4 @@
 *.pyo
 *.sublime-*
 .idea/
+quotes/settings_dev.py
