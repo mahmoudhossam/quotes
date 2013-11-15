@@ -4,19 +4,19 @@
 <li><a href="{% url "webapp:add" %}">Add new</a></li>
 {% endblock %}
 {% block body %}
-        {% for i in quotes %}
-            <blockquote class="jumbotron">
-            <div class="quote">
-                <div class="quote-mark">&#8220;</div>
-                <p>{{ i.quote_text }}</p>
-                <div class="quote-mark">&#8221;</div>
-            </div>
-        <small><cite>{{ i.quote_source }}</cite></small>
-        <div class="quote-date">
-                <a href="/quotes/{{i.pk}}">Added on: {{ i.added_on.date }}</a>
+    {% for quote in quotes %}
+        <blockquote class="jumbotron">
+        <div class="quote">
+            <div class="quote-mark">&#8220;</div>
+            <pre>{{ quote.quote_text }}</pre>
+            <div class="quote-mark quote-end">&#8221;</div>
         </div>
-        </blockquote>
-        {% empty %}
-            <p>Nothing to see here, would you like to <a href="{% url 'webapp:add' %}">add one</a>?</p>
-        {% endfor %}
+    <small><cite>{{ quote.quote_source }}</cite></small>
+    <div class="quote-date">
+            <a href="/quotes/{{quote.pk}}">Added on: {{ quote.added_on.date }}</a>
+    </div>
+    </blockquote>
+    {% empty %}
+        <p>Nothing to see here, would you like to <a href="{% url 'webapp:add' %}">add one</a>?</p>
+    {% endfor %}
 {% endblock %}

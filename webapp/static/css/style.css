@@ -9,16 +9,23 @@ blockquote small {
     line-height: 1;
 }
 
+.quote-end {
+    vertical-align: bottom;
+}
+
 .quote {
     vertical-align: top;
 }
 
-.quote p {
+.quote pre {
     display: inline-block;
     font-family: Forum;
     font-size: 120%;
     margin: 0;
     padding: 0;
+    border: none;
+    border-radius: inherit;
+    background-color: inherit;
 }
 
 .quote-date {
