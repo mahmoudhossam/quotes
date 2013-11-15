@@ -7,6 +7,7 @@
 {% block title %}Quote #{{quote.pk}}{% endblock %}
 {% block nav %}
 <li><a href="{% url "webapp:delete" quote.pk %}" onclick="showModal(); return false;" id="deleteLink">Delete</a></li>
+<li><a href="{% url "webapp:edit" quote.pk %}" id="editLink">Edit</a></li>
 {% endblock %}
 {% block body %}
 {% include "delete.html" %}

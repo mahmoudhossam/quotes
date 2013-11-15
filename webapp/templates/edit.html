@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% load bootstrap3 %}
-{% block title %}Add new quote{% endblock %}
+{% block title %}{{mode}} quote{% endblock %}
 {% block body %}
-    <h1 class="page-header">Add new quote</h1>
+    <h1 class="page-header">{{mode}} quote {{number}}</h1>
     <form method="POST" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
