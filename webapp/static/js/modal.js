@@ -1,7 +1,11 @@
-function showModal(){
+function showDeleteModal(){
     $('#deleteModal').modal();
 }
 
-function deleteQuote(url, token) {
+function showLogoutModal() {
+    $('#logoutModal').modal();
+}
+
+function doPost(url, token) {
     $.post(url, {'csrfmiddlewaretoken': token}, window.location.replace('/'));
 }
