@@ -13,7 +13,7 @@
         </div>
     <small><cite>{{ quote.quote_source }}</cite></small>
     <div class="quote-date">
-            <a href="/quotes/{{quote.pk}}">Added on: {{ quote.added_on.date }}</a>
+            <a href="{% url "webapp:view_single" quote.pk %}">Added on: {{ quote.added_on.date }}</a>
     </div>
     </blockquote>
     {% empty %}

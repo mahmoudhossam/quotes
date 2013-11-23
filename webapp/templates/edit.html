@@ -7,6 +7,6 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         {% bootstrap_button "Submit" "submit" %}
-        <a href="/" class="btn btn-default">Cancel</a>
+        <a href="{% url "webapp:view_single" form.instance.pk %}" class="btn btn-default">Cancel</a>
     </form>
 {% endblock %}
