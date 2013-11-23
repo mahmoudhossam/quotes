@@ -1,17 +1,17 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-from .forms import AddForm
 from .models import Quote
 
 
 class AddQuote(CreateView):
     success_url = '/'
-    form_class = AddForm
+    model = Quote
+    fields = ['quote_text', 'quote_source']
     template_name = 'edit.html'
 
     def get_context_data(self, **kwargs):
         ctx = super(AddQuote, self).get_context_data(**kwargs)
-        ctx['mode'] = 'Adding new'
+        ctx['mode'] = 'Add a new'
         return ctx
 
 
