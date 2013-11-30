@@ -1,6 +1,5 @@
 import dj_database_url
 import os
-# Django settings for quotes project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -108,9 +107,25 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'django.contrib.sites',
     'webapp',
     'south',
     'bootstrap3',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request',
+    'allauth.account.context_processors.account',
+    'allauth.socialaccount.context_processors.socialaccount',
+)
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -141,3 +156,7 @@ LOGGING = {
         },
     }
 }
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+
+LOGIN_REDIRECT_URL = '/'
