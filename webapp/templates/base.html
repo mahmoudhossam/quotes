@@ -1,16 +1,15 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static "js/modal.js" %}"></script>
-    <link href='http://fonts.googleapis.com/css?family=Forum' rel='stylesheet' type='text/css'>
-    {% load bootstrap3 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
+    {% load staticfiles %}
     {% block extrahead %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='http://fonts.googleapis.com/css?family=Forum' rel='stylesheet' type='text/css'>
+    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/modal.js" %}"></script>
     {% endblock %}
 </head>
 <body>
