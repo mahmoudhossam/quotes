@@ -5,7 +5,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Mahmoud Hossam', os.getenv('ADMIN_EMAIL')),
 )
 
 MANAGERS = ADMINS
@@ -129,11 +129,6 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -167,3 +162,5 @@ EMAIL_BACKEND = "postmark.django_backend.EmailBackend"
 POSTMARK_API_KEY = os.getenv('POSTMARK_API_KEY')
 
 DEFAULT_FROM_EMAIL = os.getenv('FROM_EMAIL')
+
+ALLOWED_HOSTS = ['http://django-quotes.herokuapp.com']
