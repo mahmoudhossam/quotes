@@ -114,6 +114,7 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'postmark',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
