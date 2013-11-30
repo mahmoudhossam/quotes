@@ -162,7 +162,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username'
 
 LOGIN_REDIRECT_URL = '/'
 
-EMAIL_BACKEND = "postmark.backends.PostmarkBackend"
+EMAIL_BACKEND = "postmark.django_backend.EmailBackend"
 
 POSTMARK_API_KEY = os.getenv('POSTMARK_API_KEY')
 
