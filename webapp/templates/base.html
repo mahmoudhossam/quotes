@@ -35,6 +35,9 @@
         <li class="dropdown">
             <button type="button" class="dropdown-toggle btn navbar-btn btn-default" data-toggle="dropdown">Logged in as {{ user.username }}<b class="caret"></b></button>
             <ul class="dropdown-menu">
+                {% if user.is_staff %}
+                    <li><a href="/admin/">Admin</a></li>
+                {% endif %}
                 <li><a href="{% url "account_logout" %}" onclick="showLogoutModal(); return false;">Logout</a></li>
             </ul>
         </li>
