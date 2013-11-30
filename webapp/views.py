@@ -1,5 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from .models import Quote
 
 
@@ -14,6 +16,10 @@ class AddQuote(CreateView):
         ctx['mode'] = 'Add a new'
         return ctx
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(AddQuote, self).dispatch(*args, **kwargs)
+
 
 class EditQuote(UpdateView):
     template_name = 'edit.html'
@@ -26,6 +32,10 @@ class EditQuote(UpdateView):
         ctx['mode'] = 'Editing'
         ctx['number'] = '#{}'.format(ctx['quote'].pk)
         return ctx
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(EditQuote, self).dispatch(*args, **kwargs)
 
 
 class ViewQuote(DetailView):
@@ -41,5 +51,8 @@ class QuoteList(ListView):
 
 class DeleteQuote(DeleteView):
     model = Quote
-    template_name = 'delete.html'
     success_url = '/'
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(DeleteQuote, self).dispatch(*args, **kwargs)
