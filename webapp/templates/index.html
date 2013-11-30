@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block title %}Quotes{% endblock %}
 {% block nav %}
-<li><a href="{% url "webapp:add" %}">Add new</a></li>
+{% if user.is_authenticated %}
+    <li><a href="{% url "webapp:add" %}">Add new</a></li>
+{% endif %}
 {% endblock %}
 {% block body %}
     {% for quote in quotes %}

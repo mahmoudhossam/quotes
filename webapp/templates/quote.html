@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Quote #{{quote.pk}}{% endblock %}
 {% block nav %}
+{% if user.is_authenticated %}
 <li><a href="{% url "webapp:delete" quote.pk %}" onclick="showDeleteModal(); return false;" id="deleteLink">Delete</a></li>
 <li><a href="{% url "webapp:edit" quote.pk %}" id="editLink">Edit</a></li>
+{% endif %}
 {% endblock %}
 {% block body %}
     {% include "delete_modal.html" %}
