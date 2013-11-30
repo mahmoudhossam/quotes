@@ -165,3 +165,5 @@ LOGIN_REDIRECT_URL = '/'
 EMAIL_BACKEND = "postmark.backends.PostmarkBackend"
 
 POSTMARK_API_KEY = os.getenv('POSTMARK_API_KEY')
+
+DEFAULT_FROM_EMAIL = os.getenv('FROM_EMAIL')
