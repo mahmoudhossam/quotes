@@ -163,4 +163,4 @@ POSTMARK_API_KEY = os.getenv('POSTMARK_API_KEY')
 
 DEFAULT_FROM_EMAIL = os.getenv('FROM_EMAIL')
 
-ALLOWED_HOSTS = ['http://django-quotes.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com']
