@@ -160,3 +160,7 @@ LOGGING = {
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 
 LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = "postmark.backends.PostmarkBackend"
+
+POSTMARK_API_KEY = os.getenv('POSTMARK_API_KEY')
