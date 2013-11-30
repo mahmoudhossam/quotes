@@ -7,6 +7,10 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         {% bootstrap_button "Submit" "submit" %}
-        <a href="{% url "webapp:view_single" form.instance.pk %}" class="btn btn-default">Cancel</a>
+        {% if number %}
+            <a href="{% url "webapp:view_single" form.instance.pk %}" class="btn btn-default">Cancel</a>
+        {% else %}
+            <a href="/" class="btn btn-default">Cancel</a>
+        {% endif %}
     </form>
 {% endblock %}
