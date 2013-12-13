@@ -2,6 +2,8 @@
 {% load bootstrap3 %}
 {% block title %}User login{% endblock %}
 {% block body %}
+    <h1>Register</h1>
+    <p>Already have an account? <a href="{% url "account_login" %}">Login</a>!
     <form method="POST" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
