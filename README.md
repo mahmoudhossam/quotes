@@ -9,4 +9,6 @@ So far, it lets you post, edit, and delete quotes.
 Todo
 -------
 
-Permissions
+* Permissions
+
+* Pagination
