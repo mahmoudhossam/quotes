@@ -15,9 +15,7 @@
                 <pre>{{ quote.quote_text }}</pre>
                 <div class="quote-mark quote-mark-end">&#8221;</div>
             </div>
-        <small><cite>{{ quote.quote_source }}</cite></small>
-        <div class="quote-date">
-                Added on: {{quote.added_on}}
-        </div>
-        </blockquote>
+           <span class="quote-date">Added on: {{quote.added_on}}</span>
+           <small><cite>{{ quote.quote_source }}</cite></small>
+       </blockquote>
 {% endblock %}

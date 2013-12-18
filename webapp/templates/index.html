@@ -13,10 +13,8 @@
             <pre>{{ quote.quote_text }}</pre>
             <div class="quote-mark quote-end">&#8221;</div>
         </div>
-    <small><cite>{{ quote.quote_source }}</cite></small>
-    <div class="quote-date">
-            <a href="{% url "webapp:view_single" quote.pk %}">Added on: {{ quote.added_on.date }}</a>
-    </div>
+        <span class="quote-date"><a href="{% url "webapp:view_single" quote.pk %}">Added on: {{ quote.added_on.date }}</a></span>
+        <small><cite>{{ quote.quote_source }}</cite></small>
     </blockquote>
     {% empty %}
         <p>Nothing to see here, would you like to <a href="{% url 'webapp:add' %}">add one</a>?</p>
