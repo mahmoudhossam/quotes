@@ -20,6 +20,10 @@ class AddQuote(CreateView):
     def dispatch(self, *args, **kwargs):
         return super(AddQuote, self).dispatch(*args, **kwargs)
 
+    def form_valid(self, form):
+        form.instance.added_by = self.request.user
+        return super(AddQuote, self).form_valid(form)
+
 
 class EditQuote(UpdateView):
     template_name = 'edit.html'
