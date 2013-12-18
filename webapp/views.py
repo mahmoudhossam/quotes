@@ -47,6 +47,7 @@ class QuoteList(ListView):
     model = Quote
     template_name = 'index.html'
     context_object_name = 'quotes'
+    paginate_by = 4
 
 
 class DeleteQuote(DeleteView):

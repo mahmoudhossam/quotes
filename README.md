@@ -10,5 +10,3 @@ Todo
 -------
 
 * Permissions
-
-* Pagination

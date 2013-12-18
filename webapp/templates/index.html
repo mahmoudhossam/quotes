@@ -21,4 +21,18 @@
     {% empty %}
         <p>Nothing to see here, would you like to <a href="{% url 'webapp:add' %}">add one</a>?</p>
     {% endfor %}
+    {% if is_paginated %}
+    <ul class="pager">
+        {% if page_obj.has_previous %}
+            {% if page_obj.previous_page_number == 1 %}
+            <li><a href="{% url "webapp:view_all" %}">Previous</a></li>
+            {% else %}
+            <li><a href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+            {% endif %}
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+        {% endif %}
+    </ul>
+    {% endif %}
 {% endblock %}
