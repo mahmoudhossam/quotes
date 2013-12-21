@@ -3,11 +3,11 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.core.urlresolvers import reverse
 from .models import Quote
 
 
 class AddQuote(SuccessMessageMixin, CreateView):
-    success_url = '/'
     model = Quote
     fields = ['quote_text', 'quote_source']
     template_name = 'edit.html'
@@ -26,11 +26,13 @@ class AddQuote(SuccessMessageMixin, CreateView):
         form.instance.added_by = self.request.user
         return super(AddQuote, self).form_valid(form)
 
+    def get_success_url(self):
+        return reverse('webapp:view_single', args=(self.object.pk,))
+
 
 class EditQuote(SuccessMessageMixin, UpdateView):
     template_name = 'edit.html'
     model = Quote
-    success_url = '/'
     fields = ['quote_text', 'quote_source']
     success_message = "Quote has been changed!"
 
@@ -43,6 +45,9 @@ class EditQuote(SuccessMessageMixin, UpdateView):
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super(EditQuote, self).dispatch(*args, **kwargs)
+
+    def get_success_url(self):
+        return reverse('webapp:view_single', args=(self.object.pk,))
 
 
 class ViewQuote(DetailView):
