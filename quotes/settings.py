@@ -104,7 +104,6 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
@@ -190,3 +189,5 @@ POSTMARK_API_KEY = os.getenv('POSTMARK_API_KEY')
 DEFAULT_FROM_EMAIL = os.getenv('FROM_EMAIL')
 
 ALLOWED_HOSTS = ['.herokuapp.com']
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
