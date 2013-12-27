@@ -1,0 +1,6 @@
+ipdb
+honcho
+pip-tools
+sqlparse
+django-debug-toolbar
+ipython
