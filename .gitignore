@@ -4,4 +4,3 @@
 *.sublime-*
 .idea/
 quotes/settings_dev.py
-static/
