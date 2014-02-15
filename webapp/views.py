@@ -1,14 +1,12 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse
 from guardian.mixins import PermissionRequiredMixin, LoginRequiredMixin
 from .models import Quote
 
 
-class AddQuote(SuccessMessageMixin, CreateView):
+class AddQuote(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     model = Quote
     fields = ['quote_text', 'quote_source']
     template_name = 'edit.html'
@@ -18,10 +16,6 @@ class AddQuote(SuccessMessageMixin, CreateView):
         ctx = super(AddQuote, self).get_context_data(**kwargs)
         ctx['mode'] = 'Add a new'
         return ctx
-
-    @method_decorator(login_required)
-    def dispatch(self, *args, **kwargs):
-        return super(AddQuote, self).dispatch(*args, **kwargs)
 
     def form_valid(self, form):
         form.instance.added_by = self.request.user
