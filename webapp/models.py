@@ -15,7 +15,7 @@ class Quote(models.Model):
         ordering = ['-added_on']
 
     def __unicode__(self):
-        return '{} quote by {}'.format(self.quote_source, self.added_by)
+        return u'{} quote by {}'.format(self.quote_source, self.added_by.username)
 
 
 @receiver(post_save, sender=Quote)
