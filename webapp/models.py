@@ -14,6 +14,9 @@ class Quote(models.Model):
     class Meta:
         ordering = ['-added_on']
 
+    def __unicode__(self):
+        return '{} quote by {}'.format(self.quote_source, self.added_by)
+
 
 @receiver(post_save, sender=Quote)
 def set_perms(sender, **kwargs):
