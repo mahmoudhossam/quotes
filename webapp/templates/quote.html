@@ -1,9 +1,15 @@
 {% extends "base.html" %}
+{% load guardian_tags %}
 {% block title %}Quote #{{quote.pk}}{% endblock %}
 {% block nav %}
 {% if user.is_authenticated %}
-<li><a href="{% url "webapp:delete" quote.pk %}" onclick="showDeleteModal(); return false;" id="deleteLink">Delete</a></li>
-<li><a href="{% url "webapp:edit" quote.pk %}" id="editLink">Edit</a></li>
+  {% get_obj_perms user for quote as "quote_perms" %}
+  {% if 'delete_quote' in quote_perms %}
+    <li><a href="{% url "webapp:delete" quote.pk %}" onclick="showDeleteModal(); return false;" id="deleteLink">Delete</a></li>
+  {% endif %}
+  {% if 'change_quote' in quote_perms %}
+    <li><a href="{% url "webapp:edit" quote.pk %}" id="editLink">Edit</a></li>
+  {% endif %}
 {% endif %}
 {% endblock %}
 {% block body %}
