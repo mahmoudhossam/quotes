@@ -116,6 +116,7 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'postmark',
+    'guardian',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -129,6 +130,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
 )
 
 LOGGING = {
@@ -192,3 +194,5 @@ DEFAULT_FROM_EMAIL = os.getenv('FROM_EMAIL')
 ALLOWED_HOSTS = ['.herokuapp.com']
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
+ANONYMOUS_USER_ID = -1
