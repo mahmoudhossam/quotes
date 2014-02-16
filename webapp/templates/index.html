@@ -10,7 +10,7 @@
         <blockquote class="jumbotron">
         <div class="quote">
             <div class="quote-mark">&#8220;</div>
-            <pre>{{ quote.quote_text }}</pre>
+            <p>{{ quote.quote_text }}</p>
             <div class="quote-mark quote-end">&#8221;</div>
         </div>
         <span class="quote-date"><a href="{% url "webapp:view_single" quote.pk %}">Added on: {{ quote.added_on.date }}</a></span>

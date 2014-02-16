@@ -17,15 +17,16 @@ blockquote small {
     vertical-align: top;
 }
 
-.quote pre {
+.quote p {
     display: inline-block;
     font-family: Forum;
     font-size: 120%;
     margin: 0;
     padding: 0;
     border: none;
-    border-radius: inherit;
     background-color: inherit;
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 
 .quote-date {
@@ -33,6 +34,6 @@ blockquote small {
     clear: both;
 }
 
-blockquote.jumbotron {
+.jumbotron {
     padding-bottom: 1%;
 }
