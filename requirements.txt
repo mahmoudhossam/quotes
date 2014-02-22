@@ -1,13 +1,13 @@
 dj-database-url==0.2.2
 django-allauth==0.15.0
-django-bootstrap3==2.5.6
+django-bootstrap3==2.6.0
 django-guardian==1.1.1
 Django==1.6.2
 docutils==0.11
 ecdsa==0.10
 Fabric==1.8.2
 gunicorn==18.0
-newrelic==2.12.0.10
+newrelic==2.14.0.11
 oauthlib==0.6.1
 paramiko==1.12.2
 psycopg2==2.5.2
